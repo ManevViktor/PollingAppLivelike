@@ -1,4 +1,4 @@
-package com.livelike.poolingapplivelike.util
+package com.livelike.pollingapplivelike.util
 
 import android.app.Activity
 import android.content.Context
@@ -23,7 +23,7 @@ object LLCoreUtil {
     private const val PREF_ROOT = "com.ll_demo.pref.root"
     private const val KEY_USER_TOKEN = "key.ll_demo.user_token"
     
-    private const val liveLikeUserKey = "${LIVELIKE_CLIENT_ID}_${KEY_USER_TOKEN}"
+    private const val liveLikeUserKey = "${LIVELIKE_CLIENT_ID}_$KEY_USER_TOKEN"
     
     private fun<T> SharedPreferences.putValue(key:String, value:T?){
         val editor = this.edit()

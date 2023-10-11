@@ -1,4 +1,4 @@
-package com.livelike.poolingapplivelike.pooling
+package com.livelike.pollingapplivelike.polling
 
 import com.livelike.common.LiveLikeCallback
 import com.livelike.engagementsdk.LiveLikeContentSession
@@ -15,7 +15,7 @@ import java.util.TimeZone
 import java.util.Timer
 import java.util.TimerTask
 
-class LiveWidgetPoolingData(
+class LiveWidgetPollingData(
     val session : LiveLikeContentSession,
     val flow : MutableStateFlow<List<LiveLikeWidget>>,
     private val interval : Long = 11000

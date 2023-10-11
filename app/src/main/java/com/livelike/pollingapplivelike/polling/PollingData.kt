@@ -1,19 +1,13 @@
-package com.livelike.poolingapplivelike.pooling
+package com.livelike.pollingapplivelike.polling
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.internal.ChannelFlow
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.Date
 import java.util.Timer
 import java.util.TimerTask
 
-class PoolingData<R>(val thread : CoroutineScope,
+class PollingData<R>(val thread : CoroutineScope,
                      val flow :MutableStateFlow<R>,
                      val action : () -> R,
                      private val interval : Long =11000) {

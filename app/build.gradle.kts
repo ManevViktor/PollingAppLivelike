@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.livelike.poolingapplivelike"
+    namespace = "com.livelike.pollingapplivelike"
     compileSdk = 33
     
     defaultConfig {
-        applicationId = "com.livelike.poolingapplivelike"
+        applicationId = "com.livelike.pollingapplivelike"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

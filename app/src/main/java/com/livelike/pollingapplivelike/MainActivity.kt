@@ -1,4 +1,4 @@
-package com.livelike.poolingapplivelike
+package com.livelike.pollingapplivelike
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,10 @@ import com.livelike.common.AccessTokenDelegate
 import com.livelike.engagementsdk.EngagementSDK
 import com.livelike.engagementsdk.LiveLikeContentSession
 import com.livelike.engagementsdk.LiveLikeWidget
-import com.livelike.poolingapplivelike.pooling.CustomWidgetPolling
-import com.livelike.poolingapplivelike.pooling.LiveWidgetPoolingData
-import com.livelike.poolingapplivelike.util.LLCoreUtil
+import com.livelike.pollingapplivelike.R
+import com.livelike.pollingapplivelike.polling.CustomWidgetPolling
+import com.livelike.pollingapplivelike.polling.LiveWidgetPollingData
+import com.livelike.pollingapplivelike.util.LLCoreUtil
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         "d15eaa68-f6de-4a4f-a349-efb288bec052" to "text-quiz"
     )
     
-    lateinit var liveWidgetPoolingData : LiveWidgetPoolingData
+    lateinit var liveWidgetPollingData : LiveWidgetPollingData
     lateinit var customWidgetPoolingData : CustomWidgetPolling
     lateinit var session : LiveLikeContentSession
     
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     
     
     private fun setupPooling() {
-        liveWidgetPoolingData = LiveWidgetPoolingData(session =session, flow =  liveWidgetFlow, interval = time)
+        liveWidgetPollingData = LiveWidgetPollingData(session =session, flow =  liveWidgetFlow, interval = time)
         customWidgetPoolingData = CustomWidgetPolling(sdk = sdk, widgetsMap = customWidgetMap, flow = customWidgetFlow, interval = time)
         
         
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
         
         
-        liveWidgetPoolingData.startPooling()
+        liveWidgetPollingData.startPooling()
         customWidgetPoolingData.startPooling()
     }
     
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         
-        liveWidgetPoolingData.cancelPooling()
+        liveWidgetPollingData.cancelPooling()
         customWidgetPoolingData.stopPooling()
     }
     

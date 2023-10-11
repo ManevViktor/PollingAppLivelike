@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PoolingAppLivelike"
+rootProject.name = "PollingAppLivelike"
 include(":app")
  

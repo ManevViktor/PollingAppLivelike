@@ -1,4 +1,4 @@
-package com.livelike.poolingapplivelike.pooling
+package com.livelike.pollingapplivelike.polling
 
 import com.livelike.common.LiveLikeCallback
 import com.livelike.engagementsdk.EngagementSDK
